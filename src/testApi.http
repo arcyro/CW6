@@ -1,0 +1,33 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+GET http://localhost:8081/api/books
+
+
+###
+DELETE http://localhost:8081/api/books/1
+
+
+###
+POST http://localhost:8081/api/books
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "description": "opis o książce",
+  "isbn": "123213"
+}
+
+###
+PUT http://localhost:8081/api/books/4
+Content-Type: application/json
+
+{
+  "title": "New Title",
+  "author": "New Author",
+  "description": "New description",
+  "isbn": "3333333"
+}
