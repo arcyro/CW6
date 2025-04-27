@@ -1,5 +1,6 @@
 package pl.merito.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +13,7 @@ public class Book {
     private String description;
     private String isbn;
     @ManyToOne
+
     private Category category;
 
     public Category getCategory() {
