@@ -1,6 +1,5 @@
 package pl.merito.demo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
