@@ -17,10 +17,22 @@ export class BookListComponent {
 
   constructor(private apiService: ApiService) {
   }
+
   ngOnInit() {
     this.apiService.getBooks().subscribe((data: any[]) => {
       this.books = data;
     });
   }
 
+  deleteBook(id: number) {
+    const confirmed = window.confirm(`Are you sure you want to delete ?`);
+    if (confirmed) {
+      this.apiService.deleteBook(id).subscribe({
+        next: (res) => {
+          this.books = this.books.filter(book => book.id !== id);
+        }
+      });
+
+    }
+  }
 }

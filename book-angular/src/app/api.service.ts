@@ -23,4 +23,10 @@ export class ApiService {
   addBook(book: Book): Observable<any> {
     return this.httpClient.post(this.url, book);
   }
+  deleteBook(id: number) {
+    return this.httpClient.delete(`${this.url}/${id}`);
+  }
+  showBook(id: number): Observable<any> {
+    return this.httpClient.get(`${this.url}/${id}`);
+  }
 }

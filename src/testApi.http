@@ -7,7 +7,11 @@ GET http://localhost:8081/api/books
 
 
 ###
-DELETE http://localhost:8081/api/books/1
+GET http://localhost:8081/api/books/2
+
+
+###
+DELETE http://localhost:8081/api/books/44
 
 
 ###

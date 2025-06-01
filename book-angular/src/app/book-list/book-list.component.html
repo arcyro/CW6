@@ -7,12 +7,19 @@
     <tr>
       <th>ID</th>
       <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let book of books">
       <td>{{ book.id }}</td>
       <td>{{ book.title }}</td>
+      <td>{{book.description}}</td>
+      <td>
+        <a [routerLink]="['/book/show', book.id]" class="btn btn-info">View</a> &nbsp;
+        <a [routerLink]="['/books/edit', book.id]" class="btn btn-warning">Edit</a> &nbsp;
+        <button (click)="deleteBook(book.id)" class="btn btn-danger">Delete</button>
     </tr>
   </tbody>
 </table>
