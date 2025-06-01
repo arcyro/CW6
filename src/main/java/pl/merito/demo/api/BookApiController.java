@@ -1,5 +1,7 @@
 package pl.merito.demo.api;
 
+import jakarta.validation.Valid;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.merito.demo.Book;
 import pl.merito.demo.BookRepository;
@@ -37,7 +39,10 @@ public class BookApiController {
     }
 
     @PostMapping()
-    public Book createBook(@RequestBody Book book) {
+    public Book createBook(@RequestBody Book book, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            throw new IllegalArgumentException("Invalid book data");
+        }
         return bookRepository.save(book);
     }
 

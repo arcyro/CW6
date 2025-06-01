@@ -1,18 +1,21 @@
 package pl.merito.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String title;
     private String author;
     private String description;
     private String isbn;
+    @JsonIgnore
     @ManyToOne
-
     private Category category;
 
     public Category getCategory() {

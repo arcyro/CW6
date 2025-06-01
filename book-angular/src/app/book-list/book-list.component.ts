@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {ApiService} from '../api.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
   imports: [
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css'

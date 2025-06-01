@@ -1,7 +1,18 @@
 <h1>Lista Booków</h1>
 
-<ul>
-    <li *ngFor="let book of books">
-        <span>{{ book.title }}</span>
-    </li>
-</ul>
+<table id="books-table" class="table">
+  <caption>Lista dostępnych książek</caption>
+  <a routerLink="/book/add" class="btn btn-primary mb-3">Dodaj nową książkę</a>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.id }}</td>
+      <td>{{ book.title }}</td>
+    </tr>
+  </tbody>
+</table>
